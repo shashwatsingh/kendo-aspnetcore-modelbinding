@@ -29,17 +29,20 @@ public class CompaniesController(ILogger<CompaniesController> logger) : Controll
       new CompanyDto(8, "Company 8"),
       new CompanyDto(9, "Company 9"),
       new CompanyDto(10, "Company 10"),
-    new CompanyDto(10, "Company 11"),
+      new CompanyDto(11, "Company 11"),
     ];
 
   [HttpGet]
   [Route("/api/v1/companies", Name = "api.companies")]
   public async Task<DataSourceResult> List([FromRoute] GetCompanyRequest request)
   {
-    logger.LogInformation("List - Page={Page} PageSize={PageSize}, Sorts={Sorts}, Url={Url}",
+    logger.LogInformation("List - Page={Page} PageSize={PageSize}, Sorts={Sorts}, Filters={Filters}, Groups={Groups}, Url={Url}",
       request.DataSourceRequest.Page,
       request.DataSourceRequest.PageSize,
       request.DataSourceRequest.Sorts?.Count,
+      request.DataSourceRequest.Filters?.Count,
+      request.DataSourceRequest.Groups?.Count,
+
       Request.GetEncodedPathAndQuery()
     );
 

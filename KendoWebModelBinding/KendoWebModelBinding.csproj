@@ -8,7 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.8" />
-    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2024.3.806" />
+    <!--<PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2024.3.806" />-->
+    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2023.3.1010" />
   </ItemGroup>
 
 </Project>
